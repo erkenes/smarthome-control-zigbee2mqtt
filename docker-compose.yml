@@ -24,4 +24,4 @@ services:
     environment:
       TZ: "${TIMEZONE}"
     devices:
-      - /dev/ttyUSB0:/dev/ttyUSB0
+      - /dev/ttyACM0:/dev/ttyACM0

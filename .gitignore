@@ -1,1 +1,6 @@
 .idea/
+Data/zigbee2mqtt/configuration.yaml
+Data/zigbee2mqtt/coordinator_backup.json
+Data/zigbee2mqtt/database.db
+Data/zigbee2mqtt/log/*
+Data/zigbee2mqtt/state.json
