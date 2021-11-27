@@ -1,11 +1,17 @@
 # Let new devices join our zigbee network
-permit_join: true
+permit_join: false
 
 # Docker-Compose makes the MQTT-Server available using "mqtt" hostname
 mqtt:
   base_topic: zigbee2mqtt
   server: mqtt://mqtt
-
+  user: '!secret user'
+  password: '!secret password'
+  client_id: 'zigbee2mqtt_server'
+  include_device_information: true
+  keepalive: 60
+  version: 4
+  
 # Zigbee Adapter path
 serial:
   port: /dev/ttyACM0
@@ -13,7 +19,19 @@ serial:
 # Enable the Zigbee2MQTT frontend
 frontend:
   port: 8080
+  auth_token: '!secret auth_token'
+#  url: 'https://www.zigbee2mqtt.io'
 
 # Let Zigbee2MQTT generate a new network key on first start
 advanced:
+  last_seec: 'ISO_8601_local'
   network_key: GENERATE
+  
+devices: devices.yaml
+groups: groups.yaml
+
+availability:
+  active:
+    timeout: 10
+  passive:
+    timeout: 1500
