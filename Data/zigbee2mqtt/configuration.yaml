@@ -5,8 +5,8 @@ permit_join: false
 mqtt:
   base_topic: zigbee2mqtt
   server: mqtt://mqtt
-  user: '!secret user'
-  password: '!secret password'
+  user: '!secret mqtt_user'
+  password: '!secret mqtt_password'
   client_id: 'zigbee2mqtt_server'
   include_device_information: true
   keepalive: 60
@@ -19,12 +19,12 @@ serial:
 # Enable the Zigbee2MQTT frontend
 frontend:
   port: 8080
-  auth_token: '!secret auth_token'
+  auth_token: '!secret frontend_auth_token'
 #  url: 'https://www.zigbee2mqtt.io'
 
 # Let Zigbee2MQTT generate a new network key on first start
 advanced:
-  last_seec: 'ISO_8601_local'
+  last_seen: 'ISO_8601_local'
   network_key: GENERATE
   
 devices: devices.yaml
