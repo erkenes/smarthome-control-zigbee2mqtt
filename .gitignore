@@ -4,3 +4,6 @@ Data/zigbee2mqtt/coordinator_backup.json
 Data/zigbee2mqtt/database.db
 Data/zigbee2mqtt/log/*
 Data/zigbee2mqtt/state.json
+
+Data/mosquitto/data/*.db
+Data/mosquitto/log/*.log
