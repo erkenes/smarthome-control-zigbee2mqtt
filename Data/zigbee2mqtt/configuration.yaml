@@ -7,8 +7,8 @@ mqtt:
   server: mqtt://mqtt
   user: '!secret mqtt_user'
   password: '!secret mqtt_password'
-  client_id: 'zigbee2mqtt_server'
-  include_device_information: true
+  client_id: zigbee2mqtt_server
+  include_device_information: false
   keepalive: 60
   version: 4
   
@@ -24,8 +24,10 @@ frontend:
 
 # Let Zigbee2MQTT generate a new network key on first start
 advanced:
-  last_seen: 'ISO_8601_local'
+  last_seen: ISO_8601_local
   network_key: GENERATE
+  homeassistant_legacy_entity_attributes: false
+  legacy_api: false
   
 devices: devices.yaml
 groups: groups.yaml
@@ -35,3 +37,5 @@ availability:
     timeout: 10
   passive:
     timeout: 1500
+device_options:
+  legacy: false
