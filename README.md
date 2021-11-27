@@ -1,32 +1,19 @@
 # smarthome-control-zigbee2mqtt
 
-Start a MQTT and Zigbee2MQTT Server.
+Host a Zigbee2MQTT Server with Docker.
 
 ## Usage
 
-Start the containers with
+Start the container with
 
 ```shell
 docker-compose up -d
 ```
 
-
 Based on the instructions form [Zigbee2Mqtt](https://www.zigbee2mqtt.io/guide/getting-started/#installation)
 
-## Services
+## Requirements
 
-### MQTT
+You need a MQTT-Server and a Zigbee-USB-Device to use this project.
 
-Default user: mosquitto<br />
-Default password: admin
-
-To change the password (or the username), start the containers and run
-
-```shell
-docker-compose exec mosquitto mosquitto_passwd -c /mosquitto/config/mosquitto.passwd your_username
-
-```
-
-Replace `your_username`with the username you want to use. Remeber: All other user accounts will be replaced!
-
-:warning: You need to replace the mqtt login data in the secret.yaml at the file: `Data/zigbee2mqtt/secret.yaml`
+You can find a MQTT-Server here: [erkenes/smarthome-control-mqtt](https://github.com/erkenes/smarthome-control-mqtt)

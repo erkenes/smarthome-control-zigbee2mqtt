@@ -1,9 +1,6 @@
 .idea/
-Data/zigbee2mqtt/configuration.yaml
-Data/zigbee2mqtt/coordinator_backup.json
-Data/zigbee2mqtt/database.db
-Data/zigbee2mqtt/log/*
-Data/zigbee2mqtt/state.json
-
-Data/mosquitto/data/*.db
-Data/mosquitto/log/*.log
+Data/configuration.yaml
+Data/coordinator_backup.json
+Data/database.db
+Data/log/*
+Data/state.json
