@@ -10,8 +10,8 @@ server {
     }
 
     location @proxy {
-        proxy_pass http://zigbee2mqtt;
-        proxy_set_header X-Real-IP $remote_addr;
+        proxy_pass http://zigbee2mqtt:8080;
+        # proxy_set_header X-Real-IP $remote_addr;
 
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
@@ -19,7 +19,7 @@ server {
     }
     
     location /api {
-        proxy_pass         http://zigbee2mqtt/api;
+        proxy_pass         http://zigbee2mqtt:8080/api;
         proxy_set_header Host $host;
 
         proxy_http_version 1.1;
