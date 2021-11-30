@@ -12,8 +12,8 @@ services:
     devices:
       - ${Z2M__DEVICE_PATH}:/dev/ttyUSB0
     networks:
-      - "smart-home-control"
       - "zigbee2mqtt-net"
+      - "smart-home-control"
 
   nginx:
     build: ./Docker/nginx
