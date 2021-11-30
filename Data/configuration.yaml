@@ -18,9 +18,9 @@ serial:
 
 # Enable the Zigbee2MQTT frontend
 frontend:
-  port: 8080
+  port: 80
   auth_token: '!secret frontend_auth_token'
-#  url: 'https://www.zigbee2mqtt.io'
+  url: 'https://zigbee,samrthome'
 
 # Let Zigbee2MQTT generate a new network key on first start
 advanced:

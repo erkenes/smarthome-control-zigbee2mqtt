@@ -3,20 +3,37 @@ version: '3.5'
 services:
   zigbee2mqtt:
     image: koenkk/zigbee2mqtt
-    restart: unless-stopped
+    restart: always
     volumes:
       - ${ROOT_PATH}/Data:/app/data
       - /run/udev:/run/udev:ro
-    ports:
-      - "${Z2M_WEB_PORT}:8080"
     environment:
       TZ: "${TIMEZONE}"
     devices:
       - ${Z2M__DEVICE_PATH}:/dev/ttyUSB0
     networks:
       - "smart-home-control"
+      - "zigbee2mqtt-net"
+
+  nginx:
+    build: ./Docker/nginx
+    links:
+      - zigbee2mqtt
+    environment:
+      NGINX_PORT: "${NGINX_PORT}"
+      VIRTUAL_HOST: "${VIRTUAL_HOST}"
+    command: /bin/sh -c "/run_nginx.sh"
+    restart: always
+    networks:
+      - "zigbee2mqtt-net"
+      - "nginx-proxy"
 
 networks:
+  nginx-proxy:
+    external: true
+    name: "nginx-proxy"
   smart-home-control:
     external: true
     name: "smart-home-control"
+  zigbee2mqtt-net:
+    driver: bridge
