@@ -4,3 +4,4 @@ Data/coordinator_backup.json
 Data/database.db
 Data/log/*
 Data/state.json
+Data/configuration.yaml
